@@ -6,8 +6,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestEmpleadoCumple {
 
@@ -45,5 +44,15 @@ public class TestEmpleadoCumple {
 		assertTrue(notificador.estaElEmailEnLaLista(new Email("primero@test.com")));
 		assertFalse(notificador.estaElEmailEnLaLista(new Email("empleadob@test.com")));
 		assertTrue(notificador.estaElEmailEnLaLista(new Email("otroempleado@test.com")));
+	}
+
+	@Test
+	void testEmail() {
+		assertThrows(RuntimeException.class, () -> new Email(""));
+		assertThrows(RuntimeException.class, () -> new Email(null));
+		assertThrows(RuntimeException.class, () -> new Email("example@domain.c"));
+		assertDoesNotThrow(() -> new Email("example@domain.com"));
+		assertDoesNotThrow(() -> new Email("a@v.co"));
+
 	}
 }
