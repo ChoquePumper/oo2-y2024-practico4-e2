@@ -53,6 +53,6 @@ public class TestEmpleadoCumple {
 		assertThrows(RuntimeException.class, () -> new Email("example@domain.c"));
 		assertDoesNotThrow(() -> new Email("example@domain.com"));
 		assertDoesNotThrow(() -> new Email("a@v.co"));
-
+		assertEquals("test@example.com", new Email("  \t\0 \n \b test@example.com\n\n \t\0  \b\b").toString());
 	}
 }
