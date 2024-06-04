@@ -19,7 +19,7 @@ public class NotificadorCumplePorMail extends NotificacionPorMail implements Not
 		return new MensajeSimple(
 				"avisos.empleados@example.com",
 				email.toString(),
-				"Inscripción a concurso",
+				"Feliz cumpleaños",
 				armarCuerpo(saludo));
 	}
 
